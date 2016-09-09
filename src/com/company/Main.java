@@ -1,31 +1,36 @@
 package com.company;
 
-import java.awt.*;
+import java.util.*;
 import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
 
 
+
     public static void main(String[] args) {
 
-        Random random = new Random();
+        int [] arr1 = new int [100];
 
-        int i;
-        int [] arr1 = new int [1000];
-        for (i=0;i<1000;i++){
-            arr1[i]=~i*random.nextInt();
-        }
+        createArray(arr1);
+        cocktailsort(arr1);
+        System.out.println(Arrays.toString(arr1));
 
-        Cocktailsort(arr1);
+        createArray(arr1);
+        mergeSort(arr1);
         System.out.println(Arrays.toString(arr1));
 
     }
 
+    public static void createArray(int[] arr1){
 
+        Random random = new Random();
+        for (int i=0;i< arr1.length;i++){
+            arr1[i]=~i*random.nextInt();
+        }
+    }
 
-
-    public static int[] Cocktailsort(int[] array){
+    public static void cocktailsort(int[] array){
 
         int left = 0; // левая граница
         int right = array.length - 1; // правая граница
@@ -55,7 +60,48 @@ public class Main {
             left++;
         } while (left <= right);
 
-        return array;
     }
 
+
+
+    public static void mergeSort(int[] a)
+    {
+        int[] tmp = new int[a.length];
+        mergeSort(a, tmp,  0,  a.length - 1);
+    }
+
+
+    private static void mergeSort(int[] a, int[] tmp, int left, int right)
+    {
+        if( left < right )
+        {
+            int center = (left + right) / 2;
+            mergeSort(a, tmp, left, center);
+            mergeSort(a, tmp, center + 1, right);
+            merge(a, tmp, left, center + 1, right);
+        }
+    }
+
+
+    private static void merge(int[] a, int[] tmp, int left, int right, int rightEnd )
+    {
+        int leftEnd = right - 1;
+        int k = left;
+        int num = rightEnd - left + 1;
+
+        while(left <= leftEnd && right <= rightEnd)
+            if(a[left]<=a[right])
+                tmp[k++] = a[left++];
+            else
+                tmp[k++] = a[right++];
+
+        while(left <= leftEnd)
+            tmp[k++] = a[left++];
+
+        while(right <= rightEnd)
+            tmp[k++] = a[right++];
+
+        for(int i = 0; i < num; i++, rightEnd--)
+            a[rightEnd] = tmp[rightEnd];
+    }
 }
