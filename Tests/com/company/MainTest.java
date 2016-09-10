@@ -1,7 +1,9 @@
 package com.company;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
+
 import java.util.Random;
 
 //generic
@@ -136,7 +138,6 @@ public class MainTest {
 
         assertTrue("not sorted", sortfunc(arr));
     }
-
 
 
     @Test
