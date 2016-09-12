@@ -63,7 +63,7 @@ public class MainTest {
     public void oddTest() throws Exception {
 
 
-        Integer[] arr = new Integer[EVENSIZE+1];
+        Integer[] arr = new Integer[EVENSIZE + 1];
 
         arr = createRandArray(arr);
 

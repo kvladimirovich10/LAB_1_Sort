@@ -15,7 +15,7 @@ public class Main {
     }
 
 
-    private static <T> void swap(T[] array,int i){
+    private static <T> void swap(T[] array, int i) {
         T swap = array[i + 1];
         array[i + 1] = array[i];
         array[i] = swap;
@@ -38,8 +38,6 @@ public class Main {
     }
 
 
-
-
     public static <T extends Comparable<T>> void cocktailSort(T[] array) {
 
         int left = 0;
@@ -49,19 +47,18 @@ public class Main {
         do {
 
             for (int i = left; i < right; i++) {
-                if (array[i].compareTo(array[i+1])>=0)
-                    swap(array,i);
+                if (array[i].compareTo(array[i + 1]) >= 0)
+                    swap(array, i);
             }
             right--;
             for (int i = right; i > left; i--) {
-                if (array[i].compareTo(array[i+1])>=0)
-                    swap(array,i);
+                if (array[i].compareTo(array[i + 1]) >= 0)
+                    swap(array, i);
             }
             left++;
         } while (left <= right);
 
     }
-
 
 
     public static <T extends Comparable<T>> void mergeSort(T[] a) {
@@ -85,7 +82,7 @@ public class Main {
         int num = rightEnd - left + 1;
 
         while (left <= leftEnd && right <= rightEnd)
-            if (a[left].compareTo(a[right])<=0)
+            if (a[left].compareTo(a[right]) <= 0)
                 tmp[k++] = a[left++];
             else
                 tmp[k++] = a[right++];
