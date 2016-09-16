@@ -11,7 +11,7 @@ public class MainTest {
 
 
     private Random random = new Random();
-    private int EVENSIZE = 10;
+    private int EVENSIZE = 100;
 
     private Integer[] createRandArray(Integer[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -31,7 +31,7 @@ public class MainTest {
     }
 
     @Test
-    public void lonelyArrayTest() throws Exception {
+    public void oneElementArrayTest() throws Exception {
 
         Integer[] arr1 = {1};
         Integer a = arr1[0];
@@ -60,7 +60,7 @@ public class MainTest {
     }
 
     @Test
-    public void oddTest() throws Exception {
+    public void oddArrayTest() throws Exception {
 
 
         Integer[] arr = new Integer[EVENSIZE + 1];
@@ -75,7 +75,7 @@ public class MainTest {
     }
 
     @Test
-    public void evenTest() throws Exception {
+    public void evenArrayTest() throws Exception {
 
         Integer[] arr = new Integer[EVENSIZE];
 
@@ -87,7 +87,7 @@ public class MainTest {
     }
 
     @Test
-    public void AlresdySortedTest() throws Exception {
+    public void alresdySortedArrayTest() throws Exception {
 
         Integer[] arr = new Integer[EVENSIZE];
 
@@ -100,7 +100,7 @@ public class MainTest {
     }
 
     @Test
-    public void alresdySortedBackTest() throws Exception {
+    public void alresdySortedBackArrayTest() throws Exception {
 
 
         Integer[] arr = new Integer[EVENSIZE];
@@ -114,7 +114,7 @@ public class MainTest {
     }
 
     @Test
-    public void negativeTest() throws Exception {
+    public void negativeElementArrayTest() throws Exception {
 
 
         Integer[] arr = new Integer[EVENSIZE];
@@ -128,7 +128,7 @@ public class MainTest {
     }
 
     @Test
-    public void hugeTest() throws Exception {
+    public void hugeSizeArrayTest() throws Exception {
 
         Integer[] arr = new Integer[EVENSIZE * 100];
 
@@ -138,6 +138,7 @@ public class MainTest {
         assertTrue("not sorted", sortFunctionCheck(arr));
     }
 
+    //Тесты для MergeSort
 
     @Test
     public void mergeSortlonelyArrayTest() throws Exception {
@@ -150,7 +151,7 @@ public class MainTest {
     }
 
     @Test
-    public void mergeSortsameTest() throws Exception {
+    public void mergeSortsameElementArrayTest() throws Exception {
         Integer[] arr = new Integer[EVENSIZE];
 
         for (int i = 0; i < arr.length; i++) {
