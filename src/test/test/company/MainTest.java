@@ -1,5 +1,6 @@
-package com.company;
+package company;
 
+import com.company.Main;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

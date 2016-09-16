@@ -50,7 +50,7 @@ public class Main {
                     swap(array, i);
             }
             right--;
-            for (int i = right; i > left; i--) {
+            for (int i = right; i >= left; i--) {
                 if (array[i].compareTo(array[i + 1]) >= 0)
                     swap(array, i);
             }
