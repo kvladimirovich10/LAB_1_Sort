@@ -43,7 +43,6 @@ public class Main {
         int left = 0;
         int right = array.length - 1;
 
-
         do {
 
             for (int i = left; i < right; i++) {
