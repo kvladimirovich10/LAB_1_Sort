@@ -35,8 +35,7 @@ public class Main {
     }
 
 
-    public static <T extends Comparable<T>> void cocktailSort(T[] array) {
-
+    public static void cocktailSort(Comparable[] array) {
         int left = 0;
         int right = array.length - 1;
 
@@ -56,12 +55,13 @@ public class Main {
     }
 
 
-    public static <T extends Comparable<T>> void mergeSort(T[] a) {
-        mergeSort(a, a, 0, a.length - 1);
+    public static void mergeSort(Comparable[] a) {
+        Comparable[] tmp = new Comparable[a.length];
+        mergeSort(a, tmp, 0, a.length - 1);
     }
 
 
-    private static <T extends Comparable<T>> void mergeSort(T[] a, T[] tmp, int left, int right) {
+    private static void mergeSort(Comparable[] a, Comparable[] tmp, int left, int right) {
         if (left < right) {
             int center = (left + right) / 2;
             mergeSort(a, tmp, left, center);
@@ -71,7 +71,7 @@ public class Main {
     }
 
 
-    private static <T extends Comparable<T>> void merge(T[] a, T[] tmp, int left, int right, int rightEnd) {
+    private static void merge(Comparable[] a, Comparable[] tmp, int left, int right, int rightEnd) {
         int leftEnd = right - 1;
         int k = left;
         int num = rightEnd - left + 1;
@@ -91,4 +91,5 @@ public class Main {
         for (int i = 0; i < num; i++, rightEnd--)
             a[rightEnd] = tmp[rightEnd];
     }
+
 }

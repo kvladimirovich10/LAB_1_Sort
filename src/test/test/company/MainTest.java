@@ -12,7 +12,7 @@ public class MainTest {
 
 
     private Random random = new Random();
-    private int EVENSIZE = 100;
+    private int EVENSIZE = 1000;
 
     private Integer[] createRandArray(Integer[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -29,6 +29,42 @@ public class MainTest {
             }
         }
         return true;
+    }
+
+    private boolean checkArraysForEquality(Integer[] arr1, Integer[] arr2) {
+
+        for (int i = 0; i < arr1.length; i++) {
+            if (arr1[i] != arr2[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Test
+    public void sorted_Array_Consists_Of_The_Same_Elements_Test() throws Exception {
+
+        Integer[] arr = new Integer[EVENSIZE];
+        Integer[] stock = new Integer[EVENSIZE];
+        Integer[] stock1 = new Integer[EVENSIZE];
+
+        for (int i = 0; i < stock.length; i++) {
+            stock[i] = 0;
+            stock1[i] = 0;
+        }
+        createRandArray(arr);
+
+        for (int i = 0; i < arr.length; i++) {
+            stock[arr[i]] += 1;
+        }
+
+        Main.mergeSort(arr);
+
+        for (int i = 0; i < arr.length; i++) {
+            stock1[arr[i]] += 1;
+        }
+
+        assertTrue("not sorted", checkArraysForEquality(stock1,stock));
     }
 
     @Test
