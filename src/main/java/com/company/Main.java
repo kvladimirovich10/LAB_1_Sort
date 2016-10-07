@@ -19,12 +19,10 @@ public class Main {
         T swap = array[i + 1];
         array[i + 1] = array[i];
         array[i] = swap;
-
     }
 
 
     public static void main(String[] args) {
-
         Integer[] arr1 = new Integer[10];
 
         createArrayFunc(arr1);
@@ -34,7 +32,6 @@ public class Main {
         createArrayFunc(arr1);
         mergeSort(arr1);
         System.out.println(Arrays.toString(arr1));
-
     }
 
 
